@@ -1,0 +1,51 @@
+{
+  "Entries ": [
+    {
+      "id": "thur",
+      "Date": "October 6, 2021",
+      "Frequency": "3",
+      "Room Temperature(C)": "21",
+      "Blinds": "Open",
+      "Pruning": "non",
+      "Watering": "non",
+      "Plants of Concern": "Alien Hands, Pilea",
+      "Plantlets": "non"
+    },
+
+    {
+      "id": "tues",
+      "Date": "October 12, 2021",
+      "Frequency": "1",
+      "Room Temperature(C)": "20",
+      "Blinds": "Open",
+      "Pruning": "non",
+      "Watering": "non",
+      "Plants of Concern": "Alien Hands, Pilea",
+      "Plantlets": "non"
+    },
+
+    {
+      "id": "fri",
+      "Date": "October 15, 2021",
+      "Frequency": "5",
+      "Room Temperature(C)": "26",
+      "Blinds": "Open",
+      "Pruning": "Spider Plant",
+      "Watering": "Alien Hands",
+      "Plants of Concern": "Alien Hands",
+      "Plantlets": "non"
+    },
+
+    {
+      "id": "sun",
+      "Date": "October 17, 2021",
+      "Frequency": "2",
+      "Room Temperature(C)": "22",
+      "Blinds": "Open",
+      "Pruning": "Palmy Plant, Alien Hands",
+      "Watering": "Shower",
+      "Plants of Concern": "Pilea",
+      "Plantlets": "No Name (Daniella's) keeps on proprogating..."
+    }
+  ]
+}

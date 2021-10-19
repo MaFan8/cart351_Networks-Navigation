@@ -4,13 +4,63 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+
   <title>PLANT LEDGER</title>
 
   <script src="jQuery/jquery-3.6.0.min.js"></script>
 
-  
+  <script>
+
+    $(document).ready(function(){
+      let header = $('header');
+      let loaded = false;
+      let date;
+
+      // click function
+      $("#getData").click(function(event) {
+        day = document.getElementById("date").value;
+        $(header).empty();
+        loaded = false;
+
+      // if JSON is loaded, run populateHeader() & showLOg() and display on page
+      if (loaded === false) {
+        console.log("get_clicked");
+        $.getJSON('plantLedger.json', function(data) {
+          loaded = true;
+          populateHeader(data);
+          showLog(data);
+        })
+        // if fail
+        .fail(function() {
+          console.log("error");
+        });
+      }
+        else {
+          console.log("data was loaded");
+          console.log(day);
+        }
+      }); // END click function
+
+
+
+
+    }); // END ready function
+
+
+
+
+
+  </script>
 </head>
 <body>
+  <header></header>
+  <h1>Plant Ledger</h1>
+  <div class="search">
+    <p>Which day?</p>
+    <input type="number" nim="1" max="4" id="date" value="day"/>
+    <input type="button" value="display" id="getData"/>
+  </div>
 
 </body>
 </html>

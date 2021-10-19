@@ -1,0 +1,32 @@
+/*
+Image: Annie Spratt - (Unsplash) https://unsplash.com/photos/lRcoPGrwkv0?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink
+ */
+
+ html {
+   font-family: 'courier', monospace;
+   background-image: url("/img/plantBg.jpg");
+   background-color: black;
+   width: auto;
+   height: 100%;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+ }
+
+ body {
+   width: 100%;
+   margin: 0 auto;
+ }
+
+h1 {
+  font-weight: bolder;
+  color: #FFF9C0;
+  width: 50%;
+  margin: 20px auto;
+  padding-left: 20px;
+}
+
+div.search {
+  width: 50%;
+  margin: 0 auto;
+}
