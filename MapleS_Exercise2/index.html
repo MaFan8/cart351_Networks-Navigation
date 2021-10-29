@@ -13,23 +13,23 @@
   <script>
 
     $(document).ready(function(){
-      let header = $('header');
+      let section = $('section');
       let loaded = false;
       let date;
 
       // click function
       $("#getData").click(function(event) {
-        day = document.getElementById("date").value;
-        $(header).empty();
+        date = document.getElementById("date").value;
+        $(section).empty();
         loaded = false;
 
-      // if JSON is loaded, run populateHeader() & showLOg() and display on page
+      // if JSON is loaded, run  showEntry() and display on page
       if (loaded === false) {
         console.log("get_clicked");
+
         $.getJSON('plantLedger.json', function(data) {
           loaded = true;
-          populateHeader(data);
-          showLog(data);
+          showEntry(data);
         })
         // if fail
         .fail(function() {
@@ -40,14 +40,49 @@
           console.log("data was loaded");
           console.log(day);
         }
-      }); // END click function
+    }); // END click function
 
 
+    let entry = $('<article>');
+    let p_1 = $("<p>");
+    let p_2 = $('<h3>');
+    let p_3 = $('<p>');
+    let p_4 = $('<p>');
+    let p_5 = $('<p>');
+    let p_6 = $('<p>');
+    let p_7 = $('<p>');
+    let p_8 = $('<p>');
+    let p_9 = $('<p>');
 
+    function showEntry(data) {
+      // array of Entries
+      let days = data['Entries'];
+      let current = date - 1; // align date to array number
+
+      $(p_1).text("Day:"+ days[current].Day);
+      $(p_2).text(days[current].Date);
+      $(p_3).text("Frequency:"+ days[current].Frequency);
+      $(p_4).text("Temperature(C):"+ days[current].Temperature);
+      $(p_5).text("Blinds:"+ days[current].Blinds);
+      $(p_6).text("Pruning:"+ days[current].Pruning);
+      $(p_7).text("Watering:"+ days[current].Watering);
+      $(p_8).text("Plants of Concern:"+ days[current].Plants);
+      $(p_9).text("Plantlets:"+ days[current].Plantlets);
+
+      $(p_1).appendTo(entry);
+      $(p_2).appendTo(entry);
+      $(p_3).appendTo(entry);
+      $(p_4).appendTo(entry);
+      $(p_5).appendTo(entry);
+      $(p_6).appendTo(entry);
+      $(p_7).appendTo(entry);
+      $(p_8).appendTo(entry);
+      $(p_9).appendTo(entry);
+
+      $(section).append(entry);
+    } // END showEntry function
 
     }); // END ready function
-
-
 
 
 
@@ -57,10 +92,11 @@
   <header></header>
   <h1>Plant Ledger</h1>
   <div class="search">
-    <p>Which day?</p>
-    <input type="number" nim="1" max="4" id="date" value="day"/>
-    <input type="button" value="display" id="getData"/>
+    <p class="on">Which Entry?
+    <input type="number" min="1" max="4" id="date" value="Day"/>
+    <input type="button" value="Display" id="getData"/></p>
   </div>
-
+  <section id="result-container">
+  </section>
 </body>
 </html>
